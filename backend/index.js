@@ -12,6 +12,10 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
+// Allow specific origin(s)
+app.use(cors({
+  origin: 'https://gsart2024.vercel.app'
+}));
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '..', 'build')));
